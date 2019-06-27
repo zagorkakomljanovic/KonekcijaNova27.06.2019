@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MojaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MojaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccessLogs" EntityType="MojaModel.AccessLog" />
+    <EntitySet Name="BreakTimes" EntityType="MojaModel.BreakTime" />
+    <EntitySet Name="Cards" EntityType="MojaModel.Card" />
+    <EntitySet Name="Cardholders" EntityType="MojaModel.Cardholder" />
+    <EntitySet Name="Contracts" EntityType="MojaModel.Contract" />
+    <EntitySet Name="Firms" EntityType="MojaModel.Firm" />
+    <EntitySet Name="Holidays" EntityType="MojaModel.Holiday" />
+    <EntitySet Name="LogExceptions" EntityType="MojaModel.LogException" />
+    <EntitySet Name="NonWorkingDays" EntityType="MojaModel.NonWorkingDay" />
+    <EntitySet Name="Religions" EntityType="MojaModel.Religion" />
+    <EntitySet Name="ReligionHolidays" EntityType="MojaModel.ReligionHoliday" />
+    <EntitySet Name="Shifts" EntityType="MojaModel.Shift" />
+    <EntitySet Name="SickLeaves" EntityType="MojaModel.SickLeave" />
+    <EntitySet Name="sysdiagrams" EntityType="MojaModel.sysdiagram" />
+    <AssociationSet Name="FK_AccessLog_Cardholder" Association="MojaModel.FK_AccessLog_Cardholder">
+      <End Role="Cardholder" EntitySet="Cardholders" />
+      <End Role="AccessLog" EntitySet="AccessLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BreakTime_Cardholder" Association="MojaModel.FK_BreakTime_Cardholder">
+      <End Role="Cardholder" EntitySet="Cardholders" />
+      <End Role="BreakTime" EntitySet="BreakTimes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Card_Cardholder" Association="MojaModel.FK_Card_Cardholder">
+      <End Role="Cardholder" EntitySet="Cardholders" />
+      <End Role="Card" EntitySet="Cards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cardholder_Firm" Association="MojaModel.FK_Cardholder_Firm">
+      <End Role="Firm" EntitySet="Firms" />
+      <End Role="Cardholder" EntitySet="Cardholders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cardholder_Religion" Association="MojaModel.FK_Cardholder_Religion">
+      <End Role="Religion" EntitySet="Religions" />
+      <End Role="Cardholder" EntitySet="Cardholders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cardholder_Shift" Association="MojaModel.FK_Cardholder_Shift">
+      <End Role="Shift" EntitySet="Shifts" />
+      <End Role="Cardholder" EntitySet="Cardholders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contract_Cardholder" Association="MojaModel.FK_Contract_Cardholder">
+      <End Role="Cardholder" EntitySet="Cardholders" />
+      <End Role="Contract" EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Holiday_Cardholder" Association="MojaModel.FK_Holiday_Cardholder">
+      <End Role="Cardholder" EntitySet="Cardholders" />
+      <End Role="Holiday" EntitySet="Holidays" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogException_Cardholder" Association="MojaModel.FK_LogException_Cardholder">
+      <End Role="Cardholder" EntitySet="Cardholders" />
+      <End Role="LogException" EntitySet="LogExceptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NonWorkingDays_Cardholder" Association="MojaModel.FK_NonWorkingDays_Cardholder">
+      <End Role="Cardholder" EntitySet="Cardholders" />
+      <End Role="NonWorkingDay" EntitySet="NonWorkingDays" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SickLeave_Cardholder" Association="MojaModel.FK_SickLeave_Cardholder">
+      <End Role="Cardholder" EntitySet="Cardholders" />
+      <End Role="SickLeave" EntitySet="SickLeaves" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReligionHolidays_Religion" Association="MojaModel.FK_ReligionHolidays_Religion">
+      <End Role="Religion" EntitySet="Religions" />
+      <End Role="ReligionHoliday" EntitySet="ReligionHolidays" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AccessLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="Int32" Nullable="false" />
+    <Property Name="CardCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CardType" Type="Int32" />
+    <Property Name="ControllerID" Type="Int32" />
+    <Property Name="Direction" Type="Int32" />
+    <Property Name="LocalTime" Type="DateTime" Precision="3" />
+    <Property Name="CardholderID" Type="Int32" />
+    <NavigationProperty Name="Cardholder" Relationship="MojaModel.FK_AccessLog_Cardholder" FromRole="AccessLog" ToRole="Cardholder" />
+  </EntityType>
+  <EntityType Name="BreakTime">
+    <Key>
+      <PropertyRef Name="BreakTimeID" />
+    </Key>
+    <Property Name="BreakTimeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActivityDate" Type="DateTime" Precision="0" />
+    <Property Name="LogOff" Type="DateTime" Precision="3" />
+    <Property Name="LogOn" Type="DateTime" Precision="3" />
+    <Property Name="BreakTime1" Type="Time" Precision="7" />
+    <Property Name="LogNum" Type="Int32" />
+    <Property Name="SumDirection" Type="Int32" />
+    <Property Name="CardholderID" Type="Int32" />
+    <NavigationProperty Name="Cardholder" Relationship="MojaModel.FK_BreakTime_Cardholder" FromRole="BreakTime" ToRole="Cardholder" />
+  </EntityType>
+  <EntityType Name="Card">
+    <Key>
+      <PropertyRef Name="CardID" />
+    </Key>
+    <Property Name="CardID" Type="Int32" Nullable="false" />
+    <Property Name="CardNo" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="CardNoIntCode" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="CardholderID" Type="Int32" />
+    <NavigationProperty Name="Cardholder" Relationship="MojaModel.FK_Card_Cardholder" FromRole="Card" ToRole="Cardholder" />
+  </EntityType>
+  <EntityType Name="Cardholder">
+    <Key>
+      <PropertyRef Name="CardholderID" />
+    </Key>
+    <Property Name="CardholderID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Boolean" />
+    <Property Name="FirmID" Type="Int32" />
+    <Property Name="MenaggerID" Type="Int32" />
+    <Property Name="ReligionID" Type="Int32" />
+    <Property Name="ShiftID" Type="Int32" />
+    <Property Name="SumNWD" Type="Double" />
+    <NavigationProperty Name="AccessLogs" Relationship="MojaModel.FK_AccessLog_Cardholder" FromRole="Cardholder" ToRole="AccessLog" />
+    <NavigationProperty Name="BreakTimes" Relationship="MojaModel.FK_BreakTime_Cardholder" FromRole="Cardholder" ToRole="BreakTime" />
+    <NavigationProperty Name="Cards" Relationship="MojaModel.FK_Card_Cardholder" FromRole="Cardholder" ToRole="Card" />
+    <NavigationProperty Name="Firm" Relationship="MojaModel.FK_Cardholder_Firm" FromRole="Cardholder" ToRole="Firm" />
+    <NavigationProperty Name="Religion" Relationship="MojaModel.FK_Cardholder_Religion" FromRole="Cardholder" ToRole="Religion" />
+    <NavigationProperty Name="Shift" Relationship="MojaModel.FK_Cardholder_Shift" FromRole="Cardholder" ToRole="Shift" />
+    <NavigationProperty Name="Contracts" Relationship="MojaModel.FK_Contract_Cardholder" FromRole="Cardholder" ToRole="Contract" />
+    <NavigationProperty Name="Holidays" Relationship="MojaModel.FK_Holiday_Cardholder" FromRole="Cardholder" ToRole="Holiday" />
+    <NavigationProperty Name="LogExceptions" Relationship="MojaModel.FK_LogException_Cardholder" FromRole="Cardholder" ToRole="LogException" />
+    <NavigationProperty Name="NonWorkingDays" Relationship="MojaModel.FK_NonWorkingDays_Cardholder" FromRole="Cardholder" ToRole="NonWorkingDay" />
+    <NavigationProperty Name="SickLeaves" Relationship="MojaModel.FK_SickLeave_Cardholder" FromRole="Cardholder" ToRole="SickLeave" />
+  </EntityType>
+  <EntityType Name="Contract">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FromDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ActiveState" Type="Boolean" />
+    <Property Name="FreeDays" Type="Double" />
+    <Property Name="CardholderID" Type="Int32" />
+    <NavigationProperty Name="Cardholder" Relationship="MojaModel.FK_Contract_Cardholder" FromRole="Contract" ToRole="Cardholder" />
+  </EntityType>
+  <EntityType Name="Firm">
+    <Key>
+      <PropertyRef Name="FirmID" />
+    </Key>
+    <Property Name="FirmID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Cardholders" Relationship="MojaModel.FK_Cardholder_Firm" FromRole="Firm" ToRole="Cardholder" />
+  </EntityType>
+  <EntityType Name="Holiday">
+    <Key>
+      <PropertyRef Name="HolidayID" />
+    </Key>
+    <Property Name="HolidayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveDate" Type="DateTime" Precision="0" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="0" />
+    <Property Name="NumberOfDays" Type="Double" />
+    <Property Name="CardholderID" Type="Int32" />
+    <NavigationProperty Name="Cardholder" Relationship="MojaModel.FK_Holiday_Cardholder" FromRole="Holiday" ToRole="Cardholder" />
+  </EntityType>
+  <EntityType Name="LogException">
+    <Key>
+      <PropertyRef Name="ExceptionID" />
+    </Key>
+    <Property Name="ExceptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Worktime" Type="Int32" />
+    <Property Name="LogExceptionDate" Type="DateTime" Precision="0" />
+    <Property Name="ExcIN_OUT" Type="Int32" />
+    <Property Name="CardholderID" Type="Int32" />
+    <NavigationProperty Name="Cardholder" Relationship="MojaModel.FK_LogException_Cardholder" FromRole="LogException" ToRole="Cardholder" />
+  </EntityType>
+  <EntityType Name="NonWorkingDay">
+    <Key>
+      <PropertyRef Name="Non_working_daysID" />
+    </Key>
+    <Property Name="Non_working_daysID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TotalNWD" Type="Double" />
+    <Property Name="CardholderID" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cardholder" Relationship="MojaModel.FK_NonWorkingDays_Cardholder" FromRole="NonWorkingDay" ToRole="Cardholder" />
+  </EntityType>
+  <EntityType Name="Religion">
+    <Key>
+      <PropertyRef Name="ReligionID" />
+    </Key>
+    <Property Name="ReligionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalReligiousDays" Type="Int32" />
+    <NavigationProperty Name="Cardholders" Relationship="MojaModel.FK_Cardholder_Religion" FromRole="Religion" ToRole="Cardholder" />
+    <NavigationProperty Name="ReligionHolidays" Relationship="MojaModel.FK_ReligionHolidays_Religion" FromRole="Religion" ToRole="ReligionHoliday" />
+  </EntityType>
+  <EntityType Name="ReligionHoliday">
+    <Key>
+      <PropertyRef Name="ReligionHolidaysID" />
+    </Key>
+    <Property Name="ReligionHolidaysID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReligionHolidaysDate" Type="DateTime" Precision="0" />
+    <Property Name="ReligionID" Type="Int32" />
+    <NavigationProperty Name="Religion" Relationship="MojaModel.FK_ReligionHolidays_Religion" FromRole="ReligionHoliday" ToRole="Religion" />
+  </EntityType>
+  <EntityType Name="Shift">
+    <Key>
+      <PropertyRef Name="ShiftID" />
+    </Key>
+    <Property Name="ShiftID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShiftName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Monday" Type="Boolean" Nullable="false" />
+    <Property Name="Tuesday" Type="Boolean" Nullable="false" />
+    <Property Name="Wednesday" Type="Boolean" Nullable="false" />
+    <Property Name="Thuersday" Type="Boolean" Nullable="false" />
+    <Property Name="Friday" Type="Boolean" Nullable="false" />
+    <Property Name="Saturday" Type="Boolean" Nullable="false" />
+    <Property Name="Sunday" Type="Boolean" Nullable="false" />
+    <Property Name="WorkingHours" Type="Double" Nullable="false" />
+    <Property Name="BreakTime" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Cardholders" Relationship="MojaModel.FK_Cardholder_Shift" FromRole="Shift" ToRole="Cardholder" />
+  </EntityType>
+  <EntityType Name="SickLeave">
+    <Key>
+      <PropertyRef Name="SickLeaveID" />
+    </Key>
+    <Property Name="SickLeaveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CardholderID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cardholder" Relationship="MojaModel.FK_SickLeave_Cardholder" FromRole="SickLeave" ToRole="Cardholder" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_AccessLog_Cardholder">
+    <End Type="MojaModel.Cardholder" Role="Cardholder" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MojaModel.AccessLog" Role="AccessLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cardholder">
+        <PropertyRef Name="CardholderID" />
+      </Principal>
+      <Dependent Role="AccessLog">
+        <PropertyRef Name="CardholderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BreakTime_Cardholder">
+    <End Type="MojaModel.Cardholder" Role="Cardholder" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MojaModel.BreakTime" Role="BreakTime" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cardholder">
+        <PropertyRef Name="CardholderID" />
+      </Principal>
+      <Dependent Role="BreakTime">
+        <PropertyRef Name="CardholderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Card_Cardholder">
+    <End Type="MojaModel.Cardholder" Role="Cardholder" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MojaModel.Card" Role="Card" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cardholder">
+        <PropertyRef Name="CardholderID" />
+      </Principal>
+      <Dependent Role="Card">
+        <PropertyRef Name="CardholderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cardholder_Firm">
+    <End Type="MojaModel.Firm" Role="Firm" Multiplicity="0..1" />
+    <End Type="MojaModel.Cardholder" Role="Cardholder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Firm">
+        <PropertyRef Name="FirmID" />
+      </Principal>
+      <Dependent Role="Cardholder">
+        <PropertyRef Name="FirmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cardholder_Religion">
+    <End Type="MojaModel.Religion" Role="Religion" Multiplicity="0..1" />
+    <End Type="MojaModel.Cardholder" Role="Cardholder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Religion">
+        <PropertyRef Name="ReligionID" />
+      </Principal>
+      <Dependent Role="Cardholder">
+        <PropertyRef Name="ReligionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cardholder_Shift">
+    <End Type="MojaModel.Shift" Role="Shift" Multiplicity="0..1" />
+    <End Type="MojaModel.Cardholder" Role="Cardholder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shift">
+        <PropertyRef Name="ShiftID" />
+      </Principal>
+      <Dependent Role="Cardholder">
+        <PropertyRef Name="ShiftID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contract_Cardholder">
+    <End Type="MojaModel.Cardholder" Role="Cardholder" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MojaModel.Contract" Role="Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cardholder">
+        <PropertyRef Name="CardholderID" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="CardholderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Holiday_Cardholder">
+    <End Type="MojaModel.Cardholder" Role="Cardholder" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MojaModel.Holiday" Role="Holiday" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cardholder">
+        <PropertyRef Name="CardholderID" />
+      </Principal>
+      <Dependent Role="Holiday">
+        <PropertyRef Name="CardholderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogException_Cardholder">
+    <End Type="MojaModel.Cardholder" Role="Cardholder" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MojaModel.LogException" Role="LogException" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cardholder">
+        <PropertyRef Name="CardholderID" />
+      </Principal>
+      <Dependent Role="LogException">
+        <PropertyRef Name="CardholderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NonWorkingDays_Cardholder">
+    <End Type="MojaModel.Cardholder" Role="Cardholder" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MojaModel.NonWorkingDay" Role="NonWorkingDay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cardholder">
+        <PropertyRef Name="CardholderID" />
+      </Principal>
+      <Dependent Role="NonWorkingDay">
+        <PropertyRef Name="CardholderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SickLeave_Cardholder">
+    <End Type="MojaModel.Cardholder" Role="Cardholder" Multiplicity="1" />
+    <End Type="MojaModel.SickLeave" Role="SickLeave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cardholder">
+        <PropertyRef Name="CardholderID" />
+      </Principal>
+      <Dependent Role="SickLeave">
+        <PropertyRef Name="CardholderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReligionHolidays_Religion">
+    <End Type="MojaModel.Religion" Role="Religion" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MojaModel.ReligionHoliday" Role="ReligionHoliday" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Religion">
+        <PropertyRef Name="ReligionID" />
+      </Principal>
+      <Dependent Role="ReligionHoliday">
+        <PropertyRef Name="ReligionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

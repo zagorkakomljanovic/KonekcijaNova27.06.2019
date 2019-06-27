@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MojaModelStoreContainer" CdmEntityContainer="MojaEntities">
+    <EntitySetMapping Name="AccessLogs">
+      <EntityTypeMapping TypeName="MojaModel.AccessLog">
+        <MappingFragment StoreEntitySet="AccessLog">
+          <ScalarProperty Name="CardholderID" ColumnName="CardholderID" />
+          <ScalarProperty Name="LocalTime" ColumnName="LocalTime" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="ControllerID" ColumnName="ControllerID" />
+          <ScalarProperty Name="CardType" ColumnName="CardType" />
+          <ScalarProperty Name="CardCode" ColumnName="CardCode" />
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BreakTimes">
+      <EntityTypeMapping TypeName="MojaModel.BreakTime">
+        <MappingFragment StoreEntitySet="BreakTime">
+          <ScalarProperty Name="CardholderID" ColumnName="CardholderID" />
+          <ScalarProperty Name="SumDirection" ColumnName="SumDirection" />
+          <ScalarProperty Name="LogNum" ColumnName="LogNum" />
+          <ScalarProperty Name="BreakTime1" ColumnName="BreakTime" />
+          <ScalarProperty Name="LogOn" ColumnName="LogOn" />
+          <ScalarProperty Name="LogOff" ColumnName="LogOff" />
+          <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+          <ScalarProperty Name="BreakTimeID" ColumnName="BreakTimeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cards">
+      <EntityTypeMapping TypeName="MojaModel.Card">
+        <MappingFragment StoreEntitySet="Card">
+          <ScalarProperty Name="CardholderID" ColumnName="CardholderID" />
+          <ScalarProperty Name="CardNoIntCode" ColumnName="CardNoIntCode" />
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="CardID" ColumnName="CardID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cardholders">
+      <EntityTypeMapping TypeName="MojaModel.Cardholder">
+        <MappingFragment StoreEntitySet="Cardholder">
+          <ScalarProperty Name="SumNWD" ColumnName="SumNWD" />
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+          <ScalarProperty Name="MenaggerID" ColumnName="MenaggerID" />
+          <ScalarProperty Name="FirmID" ColumnName="FirmID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CardholderID" ColumnName="CardholderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contracts">
+      <EntityTypeMapping TypeName="MojaModel.Contract">
+        <MappingFragment StoreEntitySet="Contract">
+          <ScalarProperty Name="CardholderID" ColumnName="CardholderID" />
+          <ScalarProperty Name="FreeDays" ColumnName="FreeDays" />
+          <ScalarProperty Name="ActiveState" ColumnName="ActiveState" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Firms">
+      <EntityTypeMapping TypeName="MojaModel.Firm">
+        <MappingFragment StoreEntitySet="Firm">
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FirmID" ColumnName="FirmID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Holidays">
+      <EntityTypeMapping TypeName="MojaModel.Holiday">
+        <MappingFragment StoreEntitySet="Holiday">
+          <ScalarProperty Name="CardholderID" ColumnName="CardholderID" />
+          <ScalarProperty Name="NumberOfDays" ColumnName="NumberOfDays" />
+          <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+          <ScalarProperty Name="LeaveDate" ColumnName="LeaveDate" />
+          <ScalarProperty Name="HolidayID" ColumnName="HolidayID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogExceptions">
+      <EntityTypeMapping TypeName="MojaModel.LogException">
+        <MappingFragment StoreEntitySet="LogException">
+          <ScalarProperty Name="CardholderID" ColumnName="CardholderID" />
+          <ScalarProperty Name="ExcIN_OUT" ColumnName="ExcIN_OUT" />
+          <ScalarProperty Name="LogExceptionDate" ColumnName="LogExceptionDate" />
+          <ScalarProperty Name="Worktime" ColumnName="Worktime" />
+          <ScalarProperty Name="ExceptionID" ColumnName="ExceptionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NonWorkingDays">
+      <EntityTypeMapping TypeName="MojaModel.NonWorkingDay">
+        <MappingFragment StoreEntitySet="NonWorkingDays">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CardholderID" ColumnName="CardholderID" />
+          <ScalarProperty Name="TotalNWD" ColumnName="TotalNWD" />
+          <ScalarProperty Name="Non_working_daysID" ColumnName="Non_working_daysID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Religions">
+      <EntityTypeMapping TypeName="MojaModel.Religion">
+        <MappingFragment StoreEntitySet="Religion">
+          <ScalarProperty Name="TotalReligiousDays" ColumnName="TotalReligiousDays" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReligionHolidays">
+      <EntityTypeMapping TypeName="MojaModel.ReligionHoliday">
+        <MappingFragment StoreEntitySet="ReligionHolidays">
+          <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+          <ScalarProperty Name="ReligionHolidaysDate" ColumnName="ReligionHolidaysDate" />
+          <ScalarProperty Name="ReligionHolidaysID" ColumnName="ReligionHolidaysID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shifts">
+      <EntityTypeMapping TypeName="MojaModel.Shift">
+        <MappingFragment StoreEntitySet="Shift">
+          <ScalarProperty Name="BreakTime" ColumnName="BreakTime" />
+          <ScalarProperty Name="WorkingHours" ColumnName="WorkingHours" />
+          <ScalarProperty Name="Sunday" ColumnName="Sunday" />
+          <ScalarProperty Name="Saturday" ColumnName="Saturday" />
+          <ScalarProperty Name="Friday" ColumnName="Friday" />
+          <ScalarProperty Name="Thuersday" ColumnName="Thuersday" />
+          <ScalarProperty Name="Wednesday" ColumnName="Wednesday" />
+          <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
+          <ScalarProperty Name="Monday" ColumnName="Monday" />
+          <ScalarProperty Name="ShiftName" ColumnName="ShiftName" />
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SickLeaves">
+      <EntityTypeMapping TypeName="MojaModel.SickLeave">
+        <MappingFragment StoreEntitySet="SickLeave">
+          <ScalarProperty Name="CardholderID" ColumnName="CardholderID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SickLeaveID" ColumnName="SickLeaveID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MojaModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

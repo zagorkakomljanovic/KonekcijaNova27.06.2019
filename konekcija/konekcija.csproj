@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8CB3B05E-2C6F-47A4-941E-65C07B0DEFC8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>konekcija</RootNamespace>
+    <AssemblyName>konekcija</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Holiday\frmRELIGION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Holiday\frmRELIGION.Designer.cs">
+      <DependentUpon>frmRELIGION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCARDHOLDERFIRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCARDHOLDERFIRM.Designer.cs">
+      <DependentUpon>frmCARDHOLDERFIRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Holiday\frmSICKLEAVE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Holiday\frmSICKLEAVE.Designer.cs">
+      <DependentUpon>frmSICKLEAVE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmREPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmREPORT.Designer.cs">
+      <DependentUpon>frmREPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSHIFT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSHIFT.Designer.cs">
+      <DependentUpon>frmSHIFT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Holiday\frmNONWORKINGDAYS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Holiday\frmNONWORKINGDAYS.Designer.cs">
+      <DependentUpon>frmNONWORKINGDAYS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMAIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMAIN.Designer.cs">
+      <DependentUpon>frmMAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Holiday\frmHOLIDAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Holiday\frmHOLIDAY.Designer.cs">
+      <DependentUpon>frmHOLIDAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLOGEXCEPTION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLOGEXCEPTION.Designer.cs">
+      <DependentUpon>frmLOGEXCEPTION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCARDHOLDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCARDHOLDER.Designer.cs">
+      <DependentUpon>frmCARDHOLDER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="frmCARDHOLDERFIRM.resx">
+      <DependentUpon>frmCARDHOLDERFIRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Holiday\frmRELIGION.resx">
+      <DependentUpon>frmRELIGION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Holiday\frmSICKLEAVE.resx">
+      <DependentUpon>frmSICKLEAVE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmREPORT.resx">
+      <DependentUpon>frmREPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSHIFT.resx">
+      <DependentUpon>frmSHIFT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Holiday\frmNONWORKINGDAYS.resx">
+      <DependentUpon>frmNONWORKINGDAYS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMAIN.resx">
+      <DependentUpon>frmMAIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLOGEXCEPTION.resx">
+      <DependentUpon>frmLOGEXCEPTION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCARDHOLDER.resx">
+      <DependentUpon>frmCARDHOLDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Holiday\frmHOLIDAY.resx">
+      <DependentUpon>frmHOLIDAY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\repCARDHOLDER.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\repLOGEXCEPTION.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\AccessLog.datasource" />
+    <None Include="Properties\DataSources\Card.datasource" />
+    <None Include="Properties\DataSources\Cardholder.datasource" />
+    <None Include="Properties\DataSources\Firm.datasource" />
+    <None Include="Properties\DataSources\frmCARDHOLDER.AccessLogReport.datasource" />
+    <None Include="Properties\DataSources\frmLOGEXCEPTION.LogExceptionReport.datasource" />
+    <None Include="Properties\DataSources\frmSHIFT.datasource" />
+    <None Include="Properties\DataSources\LogException.datasource" />
+    <None Include="Properties\DataSources\Religion.datasource" />
+    <None Include="Properties\DataSources\ReligionHoliday.datasource" />
+    <None Include="Properties\DataSources\Shift.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pizzarotti Montenegro.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

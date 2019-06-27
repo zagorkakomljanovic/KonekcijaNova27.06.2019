@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="967e4bdbf50c4862a17d0d80b4b7562d" Name="Diagram1">
+        <EntityTypeShape EntityType="MojaModel.AccessLog" Width="1.5" PointX="8.25" PointY="21.25" />
+        <EntityTypeShape EntityType="MojaModel.BreakTime" Width="1.5" PointX="8.25" PointY="17.75" />
+        <EntityTypeShape EntityType="MojaModel.Card" Width="1.5" PointX="8.25" PointY="15" />
+        <EntityTypeShape EntityType="MojaModel.Cardholder" Width="1.5" PointX="6" PointY="12.375" />
+        <EntityTypeShape EntityType="MojaModel.Contract" Width="1.5" PointX="8.25" PointY="12" />
+        <EntityTypeShape EntityType="MojaModel.Firm" Width="1.5" PointX="3.75" PointY="17" />
+        <EntityTypeShape EntityType="MojaModel.Holiday" Width="1.5" PointX="8.25" PointY="9" />
+        <EntityTypeShape EntityType="MojaModel.LogException" Width="1.5" PointX="8.25" PointY="3.375" />
+        <EntityTypeShape EntityType="MojaModel.NonWorkingDay" Width="1.5" PointX="8.25" PointY="6.25" />
+        <EntityTypeShape EntityType="MojaModel.Religion" Width="1.5" PointX="0.75" PointY="13.875" />
+        <EntityTypeShape EntityType="MojaModel.ReligionHoliday" Width="1.5" PointX="3" PointY="14" />
+        <EntityTypeShape EntityType="MojaModel.Shift" Width="1.5" PointX="3.75" PointY="9" />
+        <EntityTypeShape EntityType="MojaModel.SickLeave" Width="1.5" PointX="8.25" PointY="24.625" />
+        <EntityTypeShape EntityType="MojaModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="MojaModel.FK_AccessLog_Cardholder" />
+        <AssociationConnector Association="MojaModel.FK_BreakTime_Cardholder" />
+        <AssociationConnector Association="MojaModel.FK_Card_Cardholder" />
+        <AssociationConnector Association="MojaModel.FK_Cardholder_Firm" />
+        <AssociationConnector Association="MojaModel.FK_Cardholder_Religion" />
+        <AssociationConnector Association="MojaModel.FK_Cardholder_Shift" />
+        <AssociationConnector Association="MojaModel.FK_Contract_Cardholder" />
+        <AssociationConnector Association="MojaModel.FK_Holiday_Cardholder" />
+        <AssociationConnector Association="MojaModel.FK_LogException_Cardholder" />
+        <AssociationConnector Association="MojaModel.FK_NonWorkingDays_Cardholder" />
+        <AssociationConnector Association="MojaModel.FK_SickLeave_Cardholder" />
+        <AssociationConnector Association="MojaModel.FK_ReligionHolidays_Religion" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
